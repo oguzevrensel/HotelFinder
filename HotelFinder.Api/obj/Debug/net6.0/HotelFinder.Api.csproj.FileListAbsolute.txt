@@ -83,3 +83,15 @@ C:\Users\Oğuz\Desktop\BasaranMart\HotelFinder\HotelFinder.Api\obj\Debug\net6.0\
 C:\Users\Oğuz\Desktop\BasaranMart\HotelFinder\HotelFinder.Api\obj\Debug\net6.0\HotelFinder.Api.pdb
 C:\Users\Oğuz\Desktop\BasaranMart\HotelFinder\HotelFinder.Api\obj\Debug\net6.0\HotelFinder.Api.genruntimeconfig.cache
 C:\Users\Oğuz\Desktop\BasaranMart\HotelFinder\HotelFinder.Api\obj\Debug\net6.0\ref\HotelFinder.Api.dll
+C:\Users\Oğuz\Desktop\BasaranMart\HotelFinder\HotelFinder.Api\bin\Debug\net6.0\Namotion.Reflection.dll
+C:\Users\Oğuz\Desktop\BasaranMart\HotelFinder\HotelFinder.Api\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Oğuz\Desktop\BasaranMart\HotelFinder\HotelFinder.Api\bin\Debug\net6.0\NJsonSchema.dll
+C:\Users\Oğuz\Desktop\BasaranMart\HotelFinder\HotelFinder.Api\bin\Debug\net6.0\NJsonSchema.Yaml.dll
+C:\Users\Oğuz\Desktop\BasaranMart\HotelFinder\HotelFinder.Api\bin\Debug\net6.0\NSwag.Annotations.dll
+C:\Users\Oğuz\Desktop\BasaranMart\HotelFinder\HotelFinder.Api\bin\Debug\net6.0\NSwag.AspNetCore.dll
+C:\Users\Oğuz\Desktop\BasaranMart\HotelFinder\HotelFinder.Api\bin\Debug\net6.0\NSwag.Core.dll
+C:\Users\Oğuz\Desktop\BasaranMart\HotelFinder\HotelFinder.Api\bin\Debug\net6.0\NSwag.Core.Yaml.dll
+C:\Users\Oğuz\Desktop\BasaranMart\HotelFinder\HotelFinder.Api\bin\Debug\net6.0\NSwag.Generation.dll
+C:\Users\Oğuz\Desktop\BasaranMart\HotelFinder\HotelFinder.Api\bin\Debug\net6.0\NSwag.Generation.AspNetCore.dll
+C:\Users\Oğuz\Desktop\BasaranMart\HotelFinder\HotelFinder.Api\bin\Debug\net6.0\YamlDotNet.dll
+C:\Users\Oğuz\Desktop\BasaranMart\HotelFinder\HotelFinder.Api\obj\Debug\net6.0\HotelFinder.Api.MvcApplicationPartsAssemblyInfo.cs

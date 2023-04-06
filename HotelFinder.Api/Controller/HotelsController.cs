@@ -2,6 +2,7 @@
 using HotelFinder.Business.Concrete;
 using HotelFinder.Entities;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace HotelFinder.Api.Controller
 {
@@ -17,32 +18,55 @@ namespace HotelFinder.Api.Controller
         }
 
         [HttpGet]
-        public List<Hotel> Get()
+        public async Task<IActionResult> Get()
         {
-            return _service.GetAllHotels();
+            var otels = await _service.GetAllHotels();
+            return Ok(otels);
         }
 
         [HttpGet("{id}")]
-        public Hotel Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return _service.GetHotelById(id);
+            var otels = await _service.GetHotelById(id);
+            if(otels.Id != 0)
+            {
+                return Ok(otels);
+            }
+            else return NotFound();
         }
 
         [HttpPost]
-        public Hotel Post([FromBody] Hotel hotel) {
-            return _service.CreateHotel(hotel);
-
+        public async Task<IActionResult> Post([FromBody] Hotel hotel) {
+            if (ModelState.IsValid)
+            {
+                var createOtel = await _service.CreateHotel(hotel);
+                return CreatedAtAction("Get", new { id = createOtel.Id });
+            }
+            return BadRequest(ModelState);
         }
 
         [HttpPut]
-        public Hotel Put([FromBody] Hotel hotel)
+        public async Task<IActionResult> Put([FromBody] Hotel hotel)
         {
-            return _service.UpdateHotel(hotel);
+            if (ModelState.IsValid)
+            {
+                var otel = _service.UpdateHotel(hotel);
+                if(otel != null)
+                {
+                    return Ok(otel);
+                }
 
+                else
+                {
+                    return Problem("Otel gğncellenirken hata oluştu", null, (int)HttpStatusCode.InternalServerError, "Error");
+
+                }
+            }
+            return BadRequest(ModelState);
         }
 
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task Delete(int id)
         {
            _service.DeleteHotelById(id);
         }

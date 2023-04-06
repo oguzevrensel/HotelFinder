@@ -1,5 +1,6 @@
 ﻿using HotelFinder.DataAccess.Abstract;
 using HotelFinder.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,42 +11,44 @@ namespace HotelFinder.DataAccess.Concrete
 {
     public class HotelRepository : IHotelRepository
     {
-        public Hotel CreateHotel(Hotel hotel)
+        public async Task<Hotel> CreateHotel(Hotel hotel)
         {
             using var context = new HotelDbContext();
             context.Hotels.Add(hotel);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
             return hotel;
         }
 
-        public void DeleteHotelById(int id)
+        public async void DeleteHotelById(int id)
         {
             using var context = new HotelDbContext();
-            var hotel = GetHotelById(id);
+            var hotel = await GetHotelById(id);
             context.Hotels.Remove(hotel);
             context.SaveChanges();
         }
 
-        public List<Hotel> GetAllHotels()
+        // Asynchronius method..
+        public async Task<List<Hotel>> GetAllHotels()
         {
             using var context = new HotelDbContext();
-            return context.Hotels.ToList();
+            return await context.Hotels.ToListAsync();
         }
 
-        public Hotel GetHotelById(int id)
+        public async Task<Hotel> GetHotelById(int id)
         {
             using var context = new HotelDbContext();
-            return context.Hotels.Find(id) ?? new Hotel();
+            return await context.Hotels.FindAsync(id) ?? new Hotel();
         }
 
-        public Hotel UpdateHotel(Hotel hotel)
+        public async Task<Hotel> UpdateHotel(Hotel hotel)
         {
             using var context = new HotelDbContext();
             context.Hotels.Update(hotel);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
             return hotel;
         }
 
+        
     }
 
 }

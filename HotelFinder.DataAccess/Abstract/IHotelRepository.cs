@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 
 namespace HotelFinder.DataAccess.Abstract
 {
+    // ASENKRONİSE YAPTIK
     public interface IHotelRepository
     {
-        List<Hotel> GetAllHotels();
+        Task<List<Hotel>> GetAllHotels();
 
-        Hotel GetHotelById(int id);
+        Task<Hotel> GetHotelById(int id);
 
-        Hotel CreateHotel(Hotel hotel);
+        Task<Hotel> CreateHotel(Hotel hotel);
 
-        Hotel UpdateHotel(Hotel hotel);
+        Task<Hotel> UpdateHotel(Hotel hotel);
 
         void DeleteHotelById(int id);
     }
